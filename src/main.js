@@ -103,35 +103,31 @@ const advSection = document.getElementById('advantages-section');
 const advTexts = gsap.utils.toArray('.adv-text');
 const advBrushes = gsap.utils.toArray('.adv-brush');
 
-// Скрываем текст и прячем мазки (используем polygon вместо глючного inset)
-gsap.set(advTexts, { opacity: 0, y: 30 });
-gsap.set(advBrushes, { clipPath: 'polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)' }); 
+// Убрали gsap.set. Если скрипт тупанет, всё просто останется видимым.
 
 const advTl = gsap.timeline({
   scrollTrigger: {
     trigger: advSection,
     start: 'center center',
     end: '+=4000',
-    scrub: 1, // Чуть убавил с 2 до 1, чтобы анимация была более отзывчивой
-    pin: true,
-    anticipatePin: 1
+    scrub: 1,
+    pin: true
   }
 });
 
-// Собираем секвенцию: Текст -> Мазок -> Текст -> Мазок
 advTexts.forEach((text, i) => {
-  // 1. Появляется черный текст
-  advTl.to(text, { 
-    opacity: 1, 
-    y: 0, 
+  // 1. Текст выплывает из невидимости (opacity: 0) в нормальное состояние
+  advTl.from(text, { 
+    opacity: 0, 
+    y: 30, 
     ease: 'none',
     duration: 1
   });
 
-  // 2. Сразу после него рисуется мазок под текстом (если он есть)
+  // 2. Мазок разворачивается из нулевой ширины
   if (advBrushes[i]) {
-    advTl.to(advBrushes[i], {
-      clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)', 
+    advTl.from(advBrushes[i], {
+      clipPath: 'polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)', 
       ease: 'none',
       duration: 1
     });
@@ -306,6 +302,12 @@ stepBtns.forEach(btn => {
       processList.appendChild(li);
     });
   });
+});
+
+// ========== ОБНОВЛЕНИЕ СКРОЛЛА ==========
+// Обязательно: пересчитываем позиции только ПОСЛЕ загрузки всех картинок и шрифтов
+window.addEventListener('load', () => {
+  ScrollTrigger.refresh();
 });
 
 ScrollTrigger.refresh();
