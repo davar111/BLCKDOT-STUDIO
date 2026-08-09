@@ -115,22 +115,20 @@ const advTl = gsap.timeline({
   }
 });
 
+// Собираем секвенцию: Текст -> Мазок -> Текст -> Мазок
 advTexts.forEach((text, i) => {
-  // 1. Текст выплывает из невидимости (opacity: 0) в нормальное состояние
-  advTl.from(text, { 
-    opacity: 0, 
-    y: 30, 
-    ease: 'none',
-    duration: 1
-  });
+  // 1. Текст плавно выплывает
+  advTl.fromTo(text, 
+    { opacity: 0, y: 30 }, 
+    { opacity: 1, y: 0, ease: 'none', duration: 1 }
+  );
 
-  // 2. Мазок разворачивается из нулевой ширины
+  // 2. Мазок плавно разворачивается слева направо
   if (advBrushes[i]) {
-    advTl.from(advBrushes[i], {
-      clipPath: 'polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)', 
-      ease: 'none',
-      duration: 1
-    });
+    advTl.fromTo(advBrushes[i], 
+      { clipPath: 'polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)' }, 
+      { clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)', ease: 'none', duration: 1 }
+    );
   }
 });
 
