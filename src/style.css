@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Helvetica Now Display';
+  src: url('/fonts/HelveticaNowDisplay-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Now Display';
+  src: url('/fonts/HelveticaNowDisplay-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@keyframes pulseOpacity {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.15;
+  }
+}
+
+.dot-pulse {
+  /* Измени 1.8s на 3s или 4s */
+  animation: pulseOpacity 1.9s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
