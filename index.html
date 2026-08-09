@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/BLCKDOT-STUDIO/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>code-learning</title>
+    <script type="module" crossorigin src="/BLCKDOT-STUDIO/assets/index-CNn8oZoj.js"></script>
+    <link rel="stylesheet" crossorigin href="/BLCKDOT-STUDIO/assets/index-CH9PSFGt.css">
+  </head>
+  <body class="bg-black text-[#E5E5E5] font-['Helvetica_Now_Display',sans-serif]">
+    
+    <!-- Главный Hero-экран -->
+    <div class="relative w-full h-screen overflow-hidden flex flex-col justify-between pb-6">
+      
+      <!-- Фоновое видео -->
+      <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover scale-[1.15] object-bottom">
+        <source src="/BLCKDOT-STUDIO/video.mp4#t=4,30" type="video/mp4">
+      </video>
+
+      <!-- Верхний блок -->
+      <header class="relative w-full shrink-0">
+        
+        <!-- Маска с прозрачным текстом -->
+        <div class="bg-black text-white mix-blend-multiply pr-8 pl-4.5 pt-8">
+          <!-- Заголовок переведен в vw, чтобы адаптироваться и не выдавливать навигацию -->
+          <h1 class="text-[14.9em] font-bold leading-[0.86] tracking-tighter uppercase whitespace-nowrap">
+            BLCKDOT STUDIO
+          </h1>
+        </div>
+
+        <!-- Навигация -->
+        <div class="relative z-10 bg-black text-[#E5E5E5] px-8">
+          <div class="grid grid-cols-4 gap-8 pt-[3em] pb-[1.5em] text-[0.85em] tracking-[-0.01em] leading-[0.9] uppercase">
+            <div>
+              <p class="font-bold">BLCKDOT STUDIO</p>
+              <p class="mt-[0.5em] font-normal flex items-center gap-[0.4em]">
+                <span id="live-time">2:16 PM</span> 
+                <span class="inline-block w-[0.5em] h-[0.5em] bg-current rounded-full dot-pulse"></span> 
+                <span>WARSZAWA</span>
+              </p>
+            </div>
+            <div class="font-bold">
+              <p>/ STUDIO</p>
+              <p class="mt-[0.5em]">/ ARTISTS</p>
+            </div>
+            <div class="font-bold">
+              <p>/ LAB</p>
+              <p class="mt-[0.5em]">/ TATTOO STYLES</p>
+            </div>
+            <div class="flex justify-between items-start font-bold">
+              <div>
+                <p>/ EVENTS</p>
+                <p class="mt-[0.5em]">/ BLOG</p>
+              </div>
+              <a href="#" class="flex items-center gap-1 hover:opacity-70 transition-opacity">
+                <svg class="w-3 h-3" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.75 0.75V1.45C0.75 3.13016 0.75 3.97024 1.07698 4.61197C1.3646 5.17646 1.82354 5.6354 2.38803 5.92302C3.02976 6.25 3.86984 6.25 5.55 6.25H8.75M6.25 8.75L8.75 6.25L6.25 3.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                BOOK EXPERIENCE
+              </a>
+            </div>
+          </div>
+        </div>
+        
+      </header>
+
+      <!-- Текст в левом нижнем углу (убран absolute, добавлен relative) -->
+      <div class="relative z-10 text-[0.85em] font-bold leading-[1.3] tracking-[0.02em] text-black uppercase pl-8 shrink-0">
+        <p>CONTEMPORARY TATTOO STUDIO IN WARSZAWA,<br>
+          POLAND, WHERE ARTISTRY AND PRECISION MEET<br>
+          TO CREATE TIMELESS TATTOOS.</p>
+      </div>
+
+    </div>
+
+    <!-- Секция Zoom-анимации и стопки карточек -->
+    <section id="zoom-section" class="relative h-[500vh] bg-[#E5E5E5] text-black">
+      
+      <!-- Липкий контейнер -->
+      <div class="sticky top-0 left-0 w-full h-screen overflow-hidden flex justify-center items-center z-10">
+        
+        <!-- 1. Первый текст -->
+        <div id="zoom-text-first" class="absolute top-[12vh] flex flex-col items-center w-full px-6 text-center z-10">
+          <p class="text-[12px] font-bold leading-[1.1] tracking-[-0.06em] text-neutral-500 uppercase mb-4">
+            ( WHO WE ARE )
+          </p>
+          <h2 class="max-w-[730px] text-[1.9em] font-normal leading-[1.1] tracking-[-0.03em] text-black">
+            Blckdot Studio was founded by renowned graphic designer Ulas Yesilyurt. With his passion for artistic expression. Ulas leads a world-class team specializing in different tattoo styles, based in Warsaw, Plac Jana Pawła II, Poland.
+          </h2>
+        </div>
+
+        <!-- 2. Картинка -->
+        <div id="zoom-image-wrapper" class="w-[24vw] min-w-[300px] h-[35vh] relative overflow-hidden z-20">
+          <img src="/BLCKDOT-STUDIO/Team.png" alt="Team" class="w-full h-full object-cover" />
+          <div id="zoom-overlay" class="absolute inset-0 bg-black/60 opacity-0"></div>
+        </div>
+
+        <!-- 3. Второй текст -->
+        <div id="zoom-text-second" class="absolute inset-x-0 top-[0.5em] z-30 opacity-0 pointer-events-none text-white px-8">
+          <div class="flex justify-between items-center w-full text-[6em] font-bold uppercase tracking-tighter">
+            <span>WHAT</span>
+            <span>WE</span>
+            <span>OFFER:</span>
+          </div>
+        </div>
+
+        <!-- 4. Стопка карточек (изначально скрыта) -->
+<div id="cards-stack" class="absolute inset-0 z-40 flex items-center justify-center opacity-0 pointer-events-none">
+  <div class="relative w-[340px] h-[420px]">
+
+    <!-- Карточка 01 (самая нижняя) -->
+    <div class="card-item absolute inset-0 bg-black text-white p-6 flex flex-col justify-between z-10">
+      <div>
+        <p class="text-[0.85em] mb-4">01.</p>
+        <h3 class="text-[1.2em] font-bold uppercase leading-[1.1] tracking-[-0.02em]">Free Consultation</h3>
+      </div>
+      <div>
+        <div class="w-full h-[1px] bg-neutral-700 mb-3"></div>
+        <p class="text-[0.85em] font-normal leading-[1.3] tracking-[-0.02em]">
+          Our team is here to guide you, answer all your questions, and help you feel confident. Not sure about the design, placement, or style? Message us for a free consult.
+        </p>
+      </div>
+    </div>
+
+    <!-- Карточка 02 -->
+    <div class="card-item absolute inset-0 bg-black text-white p-6 flex flex-col justify-between z-20">
+      <div>
+        <p class="text-[0.85em] mb-4">02.</p>
+        <h3 class="text-[1.2em] font-bold uppercase leading-[1.1] tracking-[-0.02em]">Custom Design</h3>
+      </div>
+      <div>
+        <div class="w-full h-[1px] bg-neutral-700 mb-3"></div>
+        <p class="text-[0.85em] font-normal leading-[1.3] tracking-[-0.02em]">
+          Every piece is uniquely designed for you. Share your vision or rough ideas, and our resident artists will transform them into an exclusive, custom tattoo masterpiece.
+        </p>
+      </div>
+    </div>
+
+    <!-- Карточка 03 -->
+    <div class="card-item absolute inset-0 bg-black text-white p-6 flex flex-col justify-between z-30">
+      <div>
+        <p class="text-[0.85em] mb-4">03.</p>
+        <h3 class="text-[1.2em] font-bold uppercase leading-[1.1] tracking-[-0.02em]">Cover-Up & Rework</h3>
+      </div>
+      <div>
+        <div class="w-full h-[1px] bg-neutral-700 mb-3"></div>
+        <p class="text-[0.85em] font-normal leading-[1.3] tracking-[-0.02em]">
+          Transform old or unwanted tattoos into something you love. Our specialists use advanced blending and composition techniques to seamlessly conceal or upgrade your previous ink.
+        </p>
+      </div>
+    </div>
+
+    <!-- Карточка 04 -->
+    <div class="card-item absolute inset-0 bg-black text-white p-6 flex flex-col justify-between z-40">
+      <div>
+        <p class="text-[0.85em] mb-4">04.</p>
+        <h3 class="text-[1.2em] font-bold uppercase leading-[1.1] tracking-[-0.02em]">Aftercare & Healing</h3>
+      </div>
+      <div>
+        <div class="w-full h-[1px] bg-neutral-700 mb-3"></div>
+        <p class="text-[0.85em] font-normal leading-[1.3] tracking-[-0.02em]">
+          Proper healing is essential for longevity. We provide comprehensive professional aftercare instructions, recommended healing products, and a follow-up check to ensure safety.
+        </p>
+      </div>
+    </div>
+
+    <!-- Карточка 05 (самая верхняя) -->
+    <div class="card-item absolute inset-0 bg-black text-white p-6 flex flex-col justify-between z-50">
+      <div>
+        <p class="text-[0.85em] mb-4">05.</p>
+        <h3 class="text-[1.2em] font-bold uppercase leading-[1.1] tracking-[-0.02em]">Private Sessions</h3>
+      </div>
+      <div>
+        <div class="w-full h-[1px] bg-neutral-700 mb-3"></div>
+        <p class="text-[0.85em] font-normal leading-[1.3] tracking-[-0.02em]">
+          Experience maximum comfort and privacy in our dedicated VIP studio rooms. Perfect for large-scale projects, full-day sessions, or clients preferring an exclusive environment.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Счетчик -->
+  <div id="pagination-counter" class="absolute bottom-12 text-white text-[0.75em] font-bold tracking-widest pointer-events-auto">
+    <span id="current-slide">1</span> / 5
+  </div>
+</div>
+
+      </div>
+    </section>
+
+
+    <!-- Секция ADVANTAGES -->
+    <section id="advantages-section" class="relative min-h-screen bg-[#E5E5E5] text-black flex flex-col items-center justify-center w-full py-12">
+      
+      <p class="text-[12px] font-bold tracking-[-0.06em] text-neutral-500 uppercase mb-10">
+        ( ADVANTAGES )
+      </p>
+
+      <div class="flex flex-col items-center w-full max-w-[800px] text-center px-4">
+        
+        <!-- Пункт 1 -->
+        <h3 class="adv-text text-[1.6em] font-bold uppercase tracking-tighter">Individual approach to everyone</h3>
+        <img src="/BLCKDOT-STUDIO/brush1.png" alt="Brush" class="adv-brush w-[60%] min-w-[300px] h-auto object-contain my-6" />
+
+        <!-- Пункт 2 -->
+        <h3 class="adv-text text-[1.6em] font-bold uppercase tracking-tighter">Team of professional tattoo artists</h3>
+        <img src="/BLCKDOT-STUDIO/brush2.png" alt="Brush" class="adv-brush w-[65%] min-w-[320px] h-auto object-contain my-6" />
+
+        <!-- Пункт 3 -->
+        <h3 class="adv-text text-[1.6em] font-bold uppercase tracking-tighter">High-end equipment and techniques</h3>
+        <img src="/BLCKDOT-STUDIO/brush3.png" alt="Brush" class="adv-brush w-[55%] min-w-[280px] h-auto object-contain my-6" />
+
+        <!-- Пункт 4 -->
+        <h3 class="adv-text text-[1.6em] font-bold uppercase tracking-tighter">Work with many different styles</h3>
+        <img src="/BLCKDOT-STUDIO/brush4.png" alt="Brush" class="adv-brush w-[60%] min-w-[300px] h-auto object-contain my-6" />
+
+        <!-- Пункт 5 (Без мазка внизу) -->
+        <h3 class="adv-text text-[1.6em] font-bold uppercase tracking-tighter">Comfortable and welcoming atmosphere</h3>
+        
+      </div>
+    </section>
+
+   <!-- Секция SHOWREEL -->
+    <section id="showreel-section" class="relative w-full h-screen bg-black overflow-hidden flex flex-col justify-end">
+      
+      <!-- Картинка-заглушка -->
+      <img src="/BLCKDOT-STUDIO/Showreel.png" alt="Showreel" class="absolute inset-0 w-full h-full object-cover opacity-60" />
+
+      <!-- Оверлей для клика (чтобы ставить на паузу по клику в любую часть экрана) -->
+      <div id="showreel-overlay" class="absolute inset-0 z-10 cursor-pointer"></div>
+
+      <!-- Центральные элементы управления -->
+      <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 z-20 flex justify-between items-center px-12 text-white font-bold text-[0.85em] tracking-wider uppercase pointer-events-none">
+        
+        <!-- Кнопка Play/Pause (прижата влево) -->
+        <button id="play-pause-btn" class="pointer-events-auto hover:opacity-70 transition-opacity flex items-center w-8 h-8">
+          <!-- Иконка паузы -->
+          <svg id="icon-pause" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+            <rect x="6" y="4" width="4" height="16"></rect>
+            <rect x="14" y="4" width="4" height="16"></rect>
+          </svg>
+          <!-- Иконка плей (изначально скрыта) -->
+          <svg id="icon-play" class="w-4 h-4 hidden" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+        </button>
+
+        <!-- Текст ЖЕСТКО по центру экрана -->
+        <div class="absolute left-1/2 -translate-x-1/2 pointer-events-auto tracking-widest">SHOWREEL</div>
+
+        <!-- Таймер (прижат вправо) -->
+        <div id="showreel-time" class="pointer-events-auto tabular-nums text-right w-8">00:00</div>
+      </div>
+
+      <!-- Прогресс-бар -->
+      <div id="progress-container" class="relative z-20 w-full h-[6px] bg-white/20 cursor-pointer pointer-events-auto">
+        <div id="progress-bar" class="h-full bg-white w-0 transition-all duration-100 ease-linear"></div>
+      </div>
+    </section>
+
+    <!-- Секция ARTISTS -->
+    <section id="artists-section" class="relative w-full bg-black text-white px-8 py-24 font-['Helvetica_Now_Display',sans-serif]">
+      
+      <!-- Заголовок секции -->
+      <div class="flex justify-between items-end mb-16">
+        <h2 class="text-[6em] font-bold tracking-tighter uppercase leading-[0.8]">
+          ARTISTS <span class="text-[0.2em] align-top relative -top-[2em] tracking-normal font-normal">(23)</span>
+        </h2>
+        <a href="#" class="flex items-center gap-2 text-[0.85em] font-bold uppercase tracking-widest hover:opacity-70 transition-opacity">
+          <svg class="w-3 h-3" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.75 0.75V1.45C0.75 3.13016 0.75 3.97024 1.07698 4.61197C1.3646 5.17646 1.82354 5.6354 2.38803 5.92302C3.02976 6.25 3.86984 6.25 5.55 6.25H8.75M6.25 8.75L8.75 6.25L6.25 3.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          VIEW ALL
+        </a>
+      </div>
+
+      <!-- Сетка карточек (4 колонки) -->
+      <div class="grid grid-cols-4 gap-x-4 gap-y-12">
+        
+        <!-- Карточка 1 -->
+        <div class="flex flex-col gap-3">
+          <div class="flex justify-between items-start uppercase">
+            <span class="w-1/2 text-[1em] font-bold leading-[1.1] tracking-[-0.02em]">ULAS YESILYURT</span>
+            <span class="w-1/2 text-right text-neutral-400 text-[0.8125em] font-medium leading-[1] tracking-[-0.03em]">MICRO REALISM,<br>FINE LINE, REALISM</span>
+          </div>
+          <div class="relative w-full aspect-[4/5] bg-neutral-900 group overflow-hidden">
+            <img src="/BLCKDOT-STUDIO/1.jpg" alt="Ulas Yesilyurt" class="w-full h-full object-cover grayscale" />
+            <a href="#" class="absolute top-4 right-4 px-5 py-2.5 border border-white/60 rounded-[50%] text-[0.9375em] font-medium leading-[1] tracking-[-0.04em] hover:bg-white hover:text-black transition-colors">Biography</a>
+            <a href="#" class="absolute bottom-4 left-4 bg-white text-black px-2 py-1 text-[0.8125em] font-bold leading-[1.1] tracking-[-0.04em] uppercase hover:bg-neutral-200 transition-colors">INSTAGRAM</a>
+          </div>
+        </div>
+
+        <!-- Карточка 2 -->
+        <div class="flex flex-col gap-3">
+          <div class="flex justify-between items-start uppercase">
+            <span class="w-1/2 text-[1em] font-bold leading-[1.1] tracking-[-0.02em]">OKAN UCKUN</span>
+            <span class="w-1/2 text-right text-neutral-400 text-[0.8125em] font-medium leading-[1] tracking-[-0.03em]">MICRO REALISM, FINE LINE,<br>REALISM</span>
+          </div>
+          <div class="relative w-full aspect-[4/5] bg-neutral-900 group overflow-hidden">
+            <img src="/BLCKDOT-STUDIO/2.jpg" alt="Okan Uckun" class="w-full h-full object-cover grayscale" />
+            <a href="#" class="absolute top-4 right-4 px-5 py-2.5 border border-white/60 rounded-[50%] text-[0.9375em] font-medium leading-[1] tracking-[-0.04em] hover:bg-white hover:text-black transition-colors">Biography</a>
+            <a href="#" class="absolute bottom-4 left-4 bg-white text-black px-2 py-1 text-[0.8125em] font-bold leading-[1.1] tracking-[-0.04em] uppercase hover:bg-neutral-200 transition-colors">INSTAGRAM</a>
+          </div>
+        </div>
+
+        <!-- Карточка 3 -->
+        <div class="flex flex-col gap-3">
+          <div class="flex justify-between items-start uppercase">
+            <span class="w-1/2 text-[1em] font-bold leading-[1.1] tracking-[-0.02em]">LEAH BLUM</span>
+            <span class="w-1/2 text-right text-neutral-400 text-[0.8125em] font-medium leading-[1] tracking-[-0.03em]">MICRO REALISM,<br>FINE LINE, REALISM</span>
+          </div>
+          <div class="relative w-full aspect-[4/5] bg-neutral-900 group overflow-hidden">
+            <img src="/BLCKDOT-STUDIO/3.jpg" alt="Leah Blum" class="w-full h-full object-cover grayscale" />
+            <a href="#" class="absolute top-4 right-4 px-5 py-2.5 border border-white/60 rounded-[50%] text-[0.9375em] font-medium leading-[1] tracking-[-0.04em] hover:bg-white hover:text-black transition-colors">Biography</a>
+            <a href="#" class="absolute bottom-4 left-4 bg-white text-black px-2 py-1 text-[0.8125em] font-bold leading-[1.1] tracking-[-0.04em] uppercase hover:bg-neutral-200 transition-colors">INSTAGRAM</a>
+          </div>
+        </div>
+
+        <!-- Карточка 4 -->
+        <div class="flex flex-col gap-3">
+          <div class="flex justify-between items-start uppercase">
+            <span class="w-1/2 text-[1em] font-bold leading-[1.1] tracking-[-0.02em]">OSKAR AKERMO</span>
+            <span class="w-1/2 text-right text-neutral-400 text-[0.8125em] font-medium leading-[1] tracking-[-0.03em]">MICRO REALISM,<br>FINE LINE, REALISM</span>
+          </div>
+          <div class="relative w-full aspect-[4/5] bg-neutral-900 group overflow-hidden">
+            <img src="/BLCKDOT-STUDIO/4.jpg" alt="Oskar Akermo" class="w-full h-full object-cover grayscale" />
+            <a href="#" class="absolute top-4 right-4 px-5 py-2.5 border border-white/60 rounded-[50%] text-[0.9375em] font-medium leading-[1] tracking-[-0.04em] hover:bg-white hover:text-black transition-colors">Biography</a>
+            <a href="#" class="absolute bottom-4 left-4 bg-white text-black px-2 py-1 text-[0.8125em] font-bold leading-[1.1] tracking-[-0.04em] uppercase hover:bg-neutral-200 transition-colors">INSTAGRAM</a>
+          </div>
+        </div>
+
+        <!-- Карточка 5 -->
+        <div class="flex flex-col gap-3">
+          <div class="flex justify-between items-start uppercase">
+            <span class="w-1/2 text-[1em] font-bold leading-[1.1] tracking-[-0.02em]">STEVO</span>
+            <span class="w-1/2 text-right text-neutral-400 text-[0.8125em] font-medium leading-[1] tracking-[-0.03em]">MICRO REALISM,<br>FINE LINE, REALISM</span>
+          </div>
+          <div class="relative w-full aspect-[4/5] bg-neutral-900 group overflow-hidden">
+            <img src="/BLCKDOT-STUDIO/5.jpg" alt="Stevo" class="w-full h-full object-cover grayscale" />
+            <a href="#" class="absolute top-4 right-4 px-5 py-2.5 border border-white/60 rounded-[50%] text-[0.9375em] font-medium leading-[1] tracking-[-0.04em] hover:bg-white hover:text-black transition-colors">Biography</a>
+            <a href="#" class="absolute bottom-4 left-4 bg-white text-black px-2 py-1 text-[0.8125em] font-bold leading-[1.1] tracking-[-0.04em] uppercase hover:bg-neutral-200 transition-colors">INSTAGRAM</a>
+          </div>
+        </div>
+
+        <!-- Карточка 6 -->
+        <div class="flex flex-col gap-3">
+          <div class="flex justify-between items-start uppercase">
+            <span class="w-1/2 text-[1em] font-bold leading-[1.1] tracking-[-0.02em]">VERONICA ZAGAROVSKY</span>
+            <span class="w-1/2 text-right text-neutral-400 text-[0.8125em] font-medium leading-[1] tracking-[-0.03em]">BOTANICAL, BLACK AND<br>GREY, FREE HAND</span>
+          </div>
+          <div class="relative w-full aspect-[4/5] bg-neutral-900 group overflow-hidden">
+            <img src="/BLCKDOT-STUDIO/6.jpg" alt="Veronica Zagarovsky" class="w-full h-full object-cover grayscale" />
+            <a href="#" class="absolute top-4 right-4 px-5 py-2.5 border border-white/60 rounded-[50%] text-[0.9375em] font-medium leading-[1] tracking-[-0.04em] hover:bg-white hover:text-black transition-colors">Biography</a>
+            <a href="#" class="absolute bottom-4 left-4 bg-white text-black px-2 py-1 text-[0.8125em] font-bold leading-[1.1] tracking-[-0.04em] uppercase hover:bg-neutral-200 transition-colors">INSTAGRAM</a>
+          </div>
+        </div>
+
+        <!-- Карточка 7 -->
+        <div class="flex flex-col gap-3">
+          <div class="flex justify-between items-start uppercase">
+            <span class="w-1/2 text-[1em] font-bold leading-[1.1] tracking-[-0.02em]">EDVIN TEDEBRING</span>
+            <span class="w-1/2 text-right text-neutral-400 text-[0.8125em] font-medium leading-[1] tracking-[-0.03em]">BOTANICAL, BLACK AND<br>GREY, FREE HAND</span>
+          </div>
+          <div class="relative w-full aspect-[4/5] bg-neutral-900 group overflow-hidden">
+            <img src="/BLCKDOT-STUDIO/7.jpg" alt="Edvin Tedebring" class="w-full h-full object-cover grayscale" />
+            <a href="#" class="absolute top-4 right-4 px-5 py-2.5 border border-white/60 rounded-[50%] text-[0.9375em] font-medium leading-[1] tracking-[-0.04em] hover:bg-white hover:text-black transition-colors">Biography</a>
+            <a href="#" class="absolute bottom-4 left-4 bg-white text-black px-2 py-1 text-[0.8125em] font-bold leading-[1.1] tracking-[-0.04em] uppercase hover:bg-neutral-200 transition-colors">INSTAGRAM</a>
+          </div>
+        </div>
+
+        <!-- Карточка 8 -->
+        <div class="flex flex-col gap-3">
+          <div class="flex justify-between items-start uppercase">
+            <span class="w-1/2 text-[1em] font-bold leading-[1.1] tracking-[-0.02em]">YASIN UCAR</span>
+            <span class="w-1/2 text-right text-neutral-400 text-[0.8125em] font-medium leading-[1] tracking-[-0.03em]">BLACKWORK, ABSTRACT,<br>MICRO REALISM</span>
+          </div>
+          <div class="relative w-full aspect-[4/5] bg-neutral-900 group overflow-hidden">
+            <img src="/BLCKDOT-STUDIO/8.jpg" alt="Yasin Ucar" class="w-full h-full object-cover grayscale" />
+            <a href="#" class="absolute top-4 right-4 px-5 py-2.5 border border-white/60 rounded-[50%] text-[0.9375em] font-medium leading-[1] tracking-[-0.04em] hover:bg-white hover:text-black transition-colors">Biography</a>
+            <a href="#" class="absolute bottom-4 left-4 bg-white text-black px-2 py-1 text-[0.8125em] font-bold leading-[1.1] tracking-[-0.04em] uppercase hover:bg-neutral-200 transition-colors">INSTAGRAM</a>
+          </div>
+        </div>
+
+        <!-- Карточка 9 -->
+        <div class="flex flex-col gap-3">
+          <div class="flex justify-between items-start uppercase">
+            <span class="w-1/2 text-[1em] font-bold leading-[1.1] tracking-[-0.02em]">FEKETE DORINA</span>
+            <span class="w-1/2 text-right text-neutral-400 text-[0.8125em] font-medium leading-[1] tracking-[-0.03em]">AVANT-GARDE,<br>REALISM, PORTRAIT</span>
+          </div>
+          <div class="relative w-full aspect-[4/5] bg-neutral-900 group overflow-hidden">
+            <img src="/BLCKDOT-STUDIO/9.jpg" alt="Fekete Dorina" class="w-full h-full object-cover grayscale" />
+            <a href="#" class="absolute top-4 right-4 px-5 py-2.5 border border-white/60 rounded-[50%] text-[0.9375em] font-medium leading-[1] tracking-[-0.04em] hover:bg-white hover:text-black transition-colors">Biography</a>
+            <a href="#" class="absolute bottom-4 left-4 bg-white text-black px-2 py-1 text-[0.8125em] font-bold leading-[1.1] tracking-[-0.04em] uppercase hover:bg-neutral-200 transition-colors">INSTAGRAM</a>
+          </div>
+        </div>
+
+        <!-- Карточка 10 -->
+        <div class="flex flex-col gap-3">
+          <div class="flex justify-between items-start uppercase">
+            <span class="w-1/2 text-[1em] font-bold leading-[1.1] tracking-[-0.02em]">OKAN SEVEL</span>
+            <span class="w-1/2 text-right text-neutral-400 text-[0.8125em] font-medium leading-[1] tracking-[-0.03em]">MICRO REALISM,<br>FINE LINE, REALISM</span>
+          </div>
+          <div class="relative w-full aspect-[4/5] bg-neutral-900 group overflow-hidden">
+            <img src="/BLCKDOT-STUDIO/10.jpg" alt="Okan Sevel" class="w-full h-full object-cover grayscale" />
+            <a href="#" class="absolute top-4 right-4 px-5 py-2.5 border border-white/60 rounded-[50%] text-[0.9375em] font-medium leading-[1] tracking-[-0.04em] hover:bg-white hover:text-black transition-colors">Biography</a>
+            <a href="#" class="absolute bottom-4 left-4 bg-white text-black px-2 py-1 text-[0.8125em] font-bold leading-[1.1] tracking-[-0.04em] uppercase hover:bg-neutral-200 transition-colors">INSTAGRAM</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Секция STEP-BY-STEP PROCESS -->
+    <section id="process-section" class="relative w-full bg-black text-white px-8 py-24 font-['Helvetica_Now_Display',sans-serif]">
+      
+      <!-- Заголовок -->
+      <h2 class="text-[#2A2A2A] text-[11em] font-bold leading-[0.85] tracking-tighter uppercase mb-16">
+        STEP-BY-STEP<br>PROCESS
+      </h2>
+
+      <!-- Интерактивная таблица -->
+      <div class="border-t border-b border-neutral-800 flex flex-col lg:flex-row w-full min-h-[500px]">
+        
+        <!-- Левая часть: Кнопки шагов -->
+        <div class="w-full lg:w-7/12 flex flex-col border-r border-neutral-800">
+          
+          <div class="grid grid-cols-2">
+            <!-- Шаг 01 -->
+            <button class="step-btn active border-b border-r border-neutral-800 h-18 p-6 text-left flex items-center gap-4 text-[0.85em] font-bold uppercase tracking-wider transition-colors bg-white text-black" data-step="1">
+              <span class="opacity-60">01.</span> BOOKING YOUR SESSION
+            </button>
+            <!-- Шаг 05 -->
+            <button class="step-btn border-b border-neutral-800 h-18 p-6 text-left flex items-center gap-4 text-[0.85em] font-bold uppercase tracking-wider transition-colors hover:bg-neutral-900 text-white" data-step="5">
+              <span class="opacity-60">05.</span> PREPARING FOR YOUR SESSION
+            </button>
+
+            <!-- Шаг 02 -->
+            <button class="step-btn border-b border-r border-neutral-800 h-18 p-6 text-left flex items-center gap-4 text-[0.85em] font-bold uppercase tracking-wider transition-colors hover:bg-neutral-900 text-white" data-step="2">
+              <span class="opacity-60">02.</span> REVIEW & CONSULTATION
+            </button>
+            <!-- Шаг 06 -->
+            <button class="step-btn border-b border-neutral-800 h-18 p-6 text-left flex items-center gap-4 text-[0.85em] font-bold uppercase tracking-wider transition-colors hover:bg-neutral-900 text-white" data-step="6">
+              <span class="opacity-60">06.</span> MEETING AT THE STUDIO
+            </button>
+
+            <!-- Шаг 03 -->
+            <button class="step-btn border-b border-r border-neutral-800 h-18 p-6 text-left flex items-center gap-4 text-[0.85em] font-bold uppercase tracking-wider transition-colors hover:bg-neutral-900 text-white" data-step="3">
+              <span class="opacity-60">03.</span> CONFIRMING YOUR APPOINTMENT
+            </button>
+            <!-- Шаг 07 -->
+            <button class="step-btn border-b border-neutral-800 h-18 p-6 text-left flex items-center gap-4 text-[0.85em] font-bold uppercase tracking-wider transition-colors hover:bg-neutral-900 text-white" data-step="7">
+              <span class="opacity-60">07.</span> TATTOOING PROCESS
+            </button>
+
+            <!-- Шаг 04 -->
+            <button class="step-btn border-b border-r border-neutral-800 h-18 p-6 text-left flex items-center gap-4 text-[0.85em] font-bold uppercase tracking-wider transition-colors hover:bg-neutral-900 text-white" data-step="4">
+              <span class="opacity-60">04.</span> TATTOO DESIGN PROCESS
+            </button>
+            <!-- Шаг 08 -->
+            <button class="step-btn border-b border-neutral-800 h-18 p-6 text-left flex items-center gap-4 text-[0.85em] font-bold uppercase tracking-wider transition-colors hover:bg-neutral-900 text-white" data-step="8">
+              <span class="opacity-60">08.</span> FINAL REVEAL & DOCUMENTATION
+            </button>
+          </div>
+
+          <!-- Ссылка Book Experience -->
+          <!-- Сделали pb-8 (одинаковый нижний отступ) -->
+          <div class="flex-grow flex items-end px-6 pb-8">
+            <a href="#" class="flex items-center gap-2 text-[0.85em] font-bold uppercase tracking-widest hover:opacity-70 transition-opacity">
+              <svg class="w-3 h-3" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.75 0.75V1.45C0.75 3.13016 0.75 3.97024 1.07698 4.61197C1.3646 5.17646 1.82354 5.6354 2.38803 5.92302C3.02976 6.25 3.86984 6.25 5.55 6.25H8.75M6.25 8.75L8.75 6.25L6.25 3.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              BOOK EXPERIENCE
+            </a>
+          </div>
+        </div>
+
+        <!-- Правая часть: Контент -->
+        <div class="w-full lg:w-5/12 flex flex-col">
+          <!-- Заголовок активного шага -->
+          <div class="border-b border-neutral-800 h-18 p-6 flex items-center gap-3">
+            <div class="w-2 h-2 bg-white rounded-full"></div>
+            <h3 id="process-title" class="text-[14px] font-bold tracking-widest uppercase">BOOKING YOUR SESSION</h3>
+          </div>
+          
+          <!-- Текст активного шага -->
+          <!-- Убрали pt-88 и pb-12. Добавили pb-8 (как у ссылки) и justify-end (якорь к низу) -->
+          <div class="px-8 pt-8 pb-8 flex-grow flex flex-col justify-end">
+            <ul id="process-list" class="flex flex-col gap-4 text-[1em] text-neutral-300 leading-relaxed list-disc pl-4 marker:text-white">
+              <li>Submit your idea through our online form, including reference images and preferred placement.</li>
+              <li>Provide details about the estimated size and any specific stylistic requests.</li>
+              <li>Our management team will review your request and reply within 24–48 hours.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Секция INSTAGRAM HIGHLIGHTS -->
+    <section id="instagram-section" class="relative w-full min-h-screen bg-[#E1E1E1] text-black font-['Helvetica_Now_Display',sans-serif] flex flex-col justify-between pt-12 pb-6 px-8">
+      
+      <!-- Верхний текст -->
+      <div class="w-full text-center text-[12px] font-bold tracking-[-0.03em] uppercase opacity-60">
+        ( INSTAGRAM HIGHLIGHTS )
+      </div>
+
+      <!-- Центральный блок (Текст + Логотип) -->
+      <div class="flex flex-col items-center justify-center flex-grow gap-6">
+        <h2 class="text-center text-[1.5em] font-bold leading-[1.1] tracking-[-0.02em] uppercase">
+          @BLCKDOT<br>
+          323K FOLLOWERS
+        </h2>
+        <img src="/BLCKDOT-STUDIO/logo.png" alt="BLCKDOT Logo" class="w-20 h-auto object-contain" />
+      </div>
+
+      <!-- Сетка фотографий (8 колонок) -->
+      <div class="grid grid-cols-8 gap-2 w-full">
+        <div class="relative w-full aspect-square bg-neutral-300 overflow-hidden">
+          <img src="/BLCKDOT-STUDIO/12.jpg" alt="Instagram 1" class="w-full h-full object-cover" />
+        </div>
+        <div class="relative w-full aspect-square bg-neutral-300 overflow-hidden">
+          <img src="/BLCKDOT-STUDIO/13.jpg" alt="Instagram 2" class="w-full h-full object-cover" />
+        </div>
+        <div class="relative w-full aspect-square bg-neutral-300 overflow-hidden">
+          <img src="/BLCKDOT-STUDIO/14.jpg" alt="Instagram 3" class="w-full h-full object-cover" />
+        </div>
+        <div class="relative w-full aspect-square bg-neutral-300 overflow-hidden">
+          <img src="/BLCKDOT-STUDIO/15.jpg" alt="Instagram 4" class="w-full h-full object-cover" />
+        </div>
+        <div class="relative w-full aspect-square bg-neutral-300 overflow-hidden">
+          <img src="/BLCKDOT-STUDIO/16.jpg" alt="Instagram 5" class="w-full h-full object-cover" />
+        </div>
+        <div class="relative w-full aspect-square bg-neutral-300 overflow-hidden">
+          <img src="/BLCKDOT-STUDIO/17.jpg" alt="Instagram 6" class="w-full h-full object-cover" />
+        </div>
+        <div class="relative w-full aspect-square bg-neutral-300 overflow-hidden">
+          <img src="/BLCKDOT-STUDIO/18.jpg" alt="Instagram 7" class="w-full h-full object-cover" />
+        </div>
+        <div class="relative w-full aspect-square bg-neutral-300 overflow-hidden">
+          <img src="/BLCKDOT-STUDIO/19.jpg" alt="Instagram 8" class="w-full h-full object-cover" />
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Секция REVIEWS -->
+    <section id="reviews-section" class="relative w-full bg-[#E1E1E1] text-black px-8 py-42 font-['Helvetica_Now_Display',sans-serif]">
+      
+      <!-- Заголовок и рейтинг -->
+      <div class="flex justify-between items-end mb-20">
+        <h2 class="text-[6em] font-bold tracking-tighter uppercase leading-[0.85]">
+          REVIEWS
+        </h2>
+        <div class="text-right flex flex-col items-end">
+          <div class="flex items-start">
+            <span class="text-[3em] font-bold tracking-tighter leading-none text-[#222]">4.8</span>
+            <span class="text-[1.5em] font-bold  text-[#222] ml-2 leading-none">/ 5</span>
+          </div>
+          <div class="text-[1em] font-medium text-black/50 ">Google rating</div>
+        </div>
+      </div>
+
+      <!-- Сетка отзывов (3 колонки) -->
+      <div class="grid grid-cols-3 gap-10">
+        
+        <!-- Отзыв 1 -->
+        <!-- Добавлены border-l и pl-6 для боковой линии -->
+        <div class="flex flex-col border-l border-black/20 pl-6">
+          <h3 class="text-[1em] font-bold uppercase mb-4">ANNA KAVILE</h3>
+          <p class="text-[1em] font-medium leading-[1.2] mb-8 flex-grow">
+            I'm absolutely thrilled with the final result! The tattoo at Blckdot Tattoo Studio turned out exactly how I imagined it. Great atmosphere, full professionalism, and incredible attention to detail. I will definitely come back for another piece! I will definitely come back for another piece! I will definitely come back for another piece!
+          </p>
+          <div class="flex flex-col gap-2 mt-auto">
+            <div class="flex gap-1.5">
+              <!-- Звезды -->
+              <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <!-- Половина звезды -->
+              <svg class="w-4 h-4 text-black" viewBox="0 0 24 24">
+                <path fill="#a3a3a3" d="M12 17.77l6.18 3.25-1.18-6.88 5-4.87-6.91-1.01L12 2v15.77z"/>
+                <path fill="currentColor" d="M12 2L8.91 8.26 2 9.27l5 4.87-1.18 6.88L12 17.77V2z"/>
+              </svg>
+            </div>
+            <div class="text-[0.85em] text-black/60 mt-2">Review from <span class="font-bold text-black underline underline-offset-4">Google</span></div>
+          </div>
+        </div>
+
+        <!-- Отзыв 2 -->
+        <div class="flex flex-col border-l border-black/20 pl-6">
+          <h3 class="text-[1em] font-bold uppercase mb-4">MICHAEL GREAG</h3>
+          <p class="text-[1em] font-medium leading-[1.2] mb-8 flex-grow">
+            This was my first tattoo, and I couldn't have chosen a better place. Everything was explained clearly, the studio is very clean, and the staff is incredibly friendly. The result exceeded my expectations! This was my first tattoo, and I couldn't have chosen a better place. Everything was explained clearly, the studio is very clean, and the staff is incredibly friendly. The result exceeded my expectations!
+          </p>
+          <div class="flex flex-col gap-2 mt-auto">
+            <div class="flex gap-1.5">
+              <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 text-black" viewBox="0 0 24 24">
+                <path fill="#a3a3a3" d="M12 17.77l6.18 3.25-1.18-6.88 5-4.87-6.91-1.01L12 2v15.77z"/>
+                <path fill="currentColor" d="M12 2L8.91 8.26 2 9.27l5 4.87-1.18 6.88L12 17.77V2z"/>
+              </svg>
+            </div>
+            <div class="text-[0.85em] text-black/60 mt-2">Review from <span class="font-bold text-black underline underline-offset-4">Google</span></div>
+          </div>
+        </div>
+
+        <!-- Отзыв 3 -->
+        <div class="flex flex-col border-l border-black/20 pl-6">
+          <h3 class="text-[1em] font-bold uppercase mb-4">CAROLINE ZELINSKY</h3>
+          <p class="text-[1em] font-medium leading-[1.2] mb-8 flex-grow">
+            Total professionalism from the very first contact all the way to the healing process. The artist suggested a few changes to the design, and it was a perfect decision. Blckdot Tattoo Studio truly knows what they're doing.
+          </p>
+          <div class="flex flex-col gap-2 mt-auto">
+            <div class="flex gap-1.5">
+              <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 text-black" viewBox="0 0 24 24">
+                <path fill="#a3a3a3" d="M12 17.77l6.18 3.25-1.18-6.88 5-4.87-6.91-1.01L12 2v15.77z"/>
+                <path fill="currentColor" d="M12 2L8.91 8.26 2 9.27l5 4.87-1.18 6.88L12 17.77V2z"/>
+              </svg>
+            </div>
+            <div class="text-[0.85em] text-black/60 mt-2">Review from <span class="font-bold text-black underline underline-offset-4">Google</span></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+<!-- Секция ARTICLES -->
+    <!-- МЕНЯЙ ОТСТУП СВЕРХУ ЗДЕСЬ: pt-32 (128px) или pt-[150px] -->
+    <section id="articles-section" class="relative w-full min-h-screen bg-black text-white px-8 pt-24 pb-24 font-['Helvetica_Now_Display',sans-serif] flex flex-col">
+      
+      <!-- Тег в нормальном потоке (без absolute) -->
+      <!-- МЕНЯЙ ОТСТУП ДО КОНТЕНТА ЗДЕСЬ: mb-16 (64px) или mb-[80px] -->
+      <div class="w-full text-center text-[12px] font-bold tracking-[-0.02em] uppercase opacity-60 mb-20">
+        ( ARTICLES )
+      </div>
+
+      <!-- Сетка (2 колонки) -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 flex-grow">
+        
+        <!-- Левая колонка -->
+        <div class="flex flex-col justify-between h-full">
+          <!-- Текст и кнопка -->
+          <div>
+            <h2 class="max-w-[730px] text-[1.9em] font-normal leading-[1.1] tracking-[-0.03em] text-white mb-12">
+              Here we write about tattoo culture, our approach to work, the meaning behind designs, the process, and everything that shapes Blckdot as a studio.
+            </h2>
+            
+            <a href="#" class="flex items-center gap-2 text-[0.85em] font-bold uppercase tracking-widest hover:opacity-70 transition-opacity">
+              <svg class="w-3 h-3" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.75 0.75V1.45C0.75 3.13016 0.75 3.97024 1.07698 4.61197C1.3646 5.17646 1.82354 5.6354 2.38803 5.92302C3.02976 6.25 3.86984 6.25 5.55 6.25H8.75M6.25 8.75L8.75 6.25L6.25 3.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              VIEW ALL
+            </a>
+          </div>
+
+          <!-- Маленькое фото снизу -->
+          <div class="w-56 aspect-square bg-neutral-900 mt-24">
+            <img src="/BLCKDOT-STUDIO/article-small.jpg" alt="Tattoo Process" class="w-full h-full object-cover grayscale" />
+          </div>
+        </div>
+
+        <!-- Правая колонка (Фон + Карточка-окно) -->
+        <!-- МЕНЯЙ ШИРИНУ ФОНА ЗДЕСЬ: max-w-[600px]. ml-auto прижимает его вправо -->
+        <div class="relative w-full max-w-[800px] ml-auto h-[750px] bg-neutral-900 overflow-hidden">
+          <img src="/BLCKDOT-STUDIO/article-large.jpg" alt="Tattoo Back" class="absolute inset-0 w-full h-full object-cover grayscale" />
+          
+          <!-- Оверлей с Карточкой по центру -->
+          <div class="absolute inset-0 flex items-center justify-center p-8">
+            
+            <!-- МЕНЯЙ ШИРИНУ КАРТОЧКИ ЗДЕСЬ: max-w-[380px] -->
+            <div class="w-full max-w-[380px] flex flex-col border-[12px] border-white">
+              
+              <!-- Верхняя часть: Прозрачный квадрат-окно -->
+              <div class="w-full aspect-square"></div>
+              
+              <!-- Добавлен px-6 для внутренних отступов белой плашки -->
+              <div class="bg-white text-black px-6 pt-4 pb-0 pr-0 pl-0 flex flex-col justify-between">
+                <h3 class="text-[1.2em] font-medium leading-[1.1] tracking-[-0.02em]">
+                  The Evolution of Fine Line Tattoos:<br>
+                  From Underground to Mainstream
+                </h3>
+                
+                <div class="flex justify-between items-center text-[0.75em] font-bold tracking-widest uppercase mt-12">
+                  <div class="flex items-center gap-2">
+                    <div class="w-2 h-2 bg-black rounded-full shrink-0"></div>
+                    <span class="text-black font-bold tracking-[-0.01em]">CULTURE</span>
+                  </div>
+                  <div class="text-black/50 font-bold tracking-[-0.01em]">MARCH 14, 2025</div>
+                </div>
+              </div>
+
+          </div>
+        </div>
+
+    </section>
+
+<!-- FOOTER -->
+<footer class="relative w-full bg-black text-white pt-8 pb-8 px-8 font-['Helvetica_Now_Display',sans-serif] overflow-hidden">
+  
+  <!-- Верхняя линия -->
+  <div class="border-t border-white/10 mb-8"></div>
+  
+  <!-- СЕТКА ДЛЯ 4 КОЛОНОК (ты случайно удалил эту строчку) -->
+  <div class="grid grid-cols-4 gap-8 mb-20">
+    
+    <!-- NAVIGATION -->
+    <div>
+      <h4 class="text-[0.85em] font-bold tracking-[0.08em] uppercase mb-4">NAVIGATION</h4>
+      <ul class="flex flex-col gap-1 text-[13px]  text-white/40 font-medium uppercase tracking-[-0.01em]">
+        <li><a href="#" class="hover:opacity-60 transition-opacity">ARTISTS</a></li>
+        <li><a href="#" class="hover:opacity-60 transition-opacity">STUDIO</a></li>
+        <li><a href="#" class="hover:opacity-60 transition-opacity">LAB</a></li>
+        <li><a href="#" class="hover:opacity-60 transition-opacity">TATTOO STYLES</a></li>
+        <li><a href="#" class="hover:opacity-60 transition-opacity">BLOG</a></li>
+        <li><a href="#" class="hover:opacity-60 transition-opacity">EVENTS</a></li>
+      </ul>
+    </div>
+
+    <!-- SOCIAL MEDIA -->
+    <div>
+      <h4 class="text-[0.85em] font-bold tracking-[0.08em] uppercase mb-4">SOCIAL MEDIA</h4>
+      <ul class="flex flex-col gap-1 text-[13px]  text-white/40 font-medium uppercase tracking-[-0.01em]">
+        <li><a href="#" class="hover:opacity-60 transition-opacity">INSTAGRAM</a></li>
+        <li><a href="#" class="hover:opacity-60 transition-opacity">YOUTUBE</a></li>
+        <li><a href="#" class="hover:opacity-60 transition-opacity">TWITTER</a></li>
+      </ul>
+    </div>
+
+    <!-- CONTACT -->
+    <div>
+      <h4 class="text-[0.85em] font-bold tracking-[0.08em] uppercase mb-4">CONTACT</h4>
+      <ul class="flex flex-col gap-1 text-[13px]  text-white/40 font-medium tracking-[-0.01em]">
+        <li><a href="mailto:BLCKDOT@GMAIL.COM" class="hover:opacity-60 transition-opacity">BLCKDOT@GMAIL.COM</a></li>
+        <li><a href="mailto:CAREER_BLCKDOT@GMAIL.COM" class="hover:opacity-60 transition-opacity">CAREER_BLCKDOT@GMAIL.COM</a></li>
+      </ul>
+    </div>
+
+    <!-- NEWSLETTER -->
+    <div>
+      <h4 class="text-[0.85em] font-bold tracking-[0.08em] uppercase mb-4">NEWSLETTER</h4>
+      <form class="flex gap-1 h-[44px] w-full">
+        <input 
+          type="email" 
+          placeholder="ENTER YOUR E-MAIL" 
+          class="flex-1 min-w-0 h-full bg-transparent border border-white/30 px-4 text-[12px] tracking-[0.04em] uppercase placeholder:text-white/40 focus:outline-none focus:border-white/60 transition-colors"
+        />
+        <button 
+          type="submit" 
+          class="h-full bg-white text-black px-8 text-[12px] font-bold tracking-[0.06em] uppercase hover:bg-neutral-200 transition-colors whitespace-nowrap"
+        >
+          SUBSCRIBE
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- LEGALS (под второй колонкой) -->
+  <div class="grid grid-cols-4 gap-8 mb-28">
+    <div></div> <!-- пустая первая колонка -->
+    
+    <div>
+      <h4 class="text-[0.85em] font-bold tracking-[0.08em] uppercase mb-4">LEGALS</h4>
+      <ul class="flex flex-col gap-1 text-[13px]  text-white/40 font-medium uppercase tracking-[-0.01em]">
+        <li><a href="#" class="hover:opacity-60 transition-opacity">PRIVACY POLICY</a></li>
+        <li><a href="#" class="hover:opacity-60 transition-opacity">COOKIE POLICY</a></li>
+        <li><a href="#" class="hover:opacity-60 transition-opacity">TERMS OF USE</a></li>
+      </ul>
+    </div>
+    
+    <div></div>
+    <div></div>
+  </div>
+
+  <!-- Огромный логотип -->
+  <div class="w-full overflow-hidden select-none pointer-events-none">
+    <h2 class="text-[14.4em] -ml-[20px] font-bold leading-[0.78] tracking-[-0.03em] uppercase text-white/[0.13] whitespace-nowrap">
+      BLCKDOT STUDIO
+    </h2>
+  </div>
+
+  <!-- Нижняя полоска -->
+  <!-- Заменил mt-6 на mt-16 для бОльшего отступа -->
+  <div class="flex justify-between items-end mt-4 pt-5 border-t border-white/10 text-[0.85em] tracking-[0.04em] uppercase text-white/40">
+    <div class="leading-[1.4]">
+      <div>© 2026 BLCKDOT STUDIO</div>
+      <div>ALL RIGHTS RESERVED</div>
+    </div>
+    <div>WARSAW, POLAND</div>
+  </div>
+</footer>
