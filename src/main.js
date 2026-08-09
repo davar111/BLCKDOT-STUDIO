@@ -117,13 +117,13 @@ const advTl = gsap.timeline({
 
 // Собираем секвенцию: Текст -> Мазок -> Текст -> Мазок
 advTexts.forEach((text, i) => {
-  // 1. Текст плавно выплывает
+  // Меняем opacity на autoAlpha для железобетонной отрисовки текста
   advTl.fromTo(text, 
-    { opacity: 0, y: 30 }, 
-    { opacity: 1, y: 0, ease: 'none', duration: 1 }
+    { autoAlpha: 0, y: 30 }, 
+    { autoAlpha: 1, y: 0, ease: 'none', duration: 1 }
   );
 
-  // 2. Мазок плавно разворачивается слева направо
+  // Мазки остаются как были
   if (advBrushes[i]) {
     advTl.fromTo(advBrushes[i], 
       { clipPath: 'polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)' }, 
