@@ -104,7 +104,8 @@ const advTexts = gsap.utils.toArray('.adv-text');
 const advBrushes = gsap.utils.toArray('.adv-brush');
 
 // Убрали gsap.set. Если скрипт тупанет, всё просто останется видимым.
-
+// перед созданием advTl — верни явный gsap.set (в комментарии видно, что его убрали)
+gsap.set(advTexts, { autoAlpha: 0, y: 30 });
 const advTl = gsap.timeline({
   scrollTrigger: {
     trigger: advSection,
