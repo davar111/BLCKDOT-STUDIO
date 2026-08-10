@@ -98,17 +98,14 @@ cards.forEach((card, index) => {
   }, null, '<');
 });
 
-// ========== ADVANTAGES АНИМАЦИЯ ==========
-const advSection = document.getElementById('advantages-section');
-const advTexts = gsap.utils.toArray('.adv-text');
-const advBrushes = gsap.utils.toArray('.adv-brush');
+// ========== BENEFITS АНИМАЦИЯ ==========
+const benefitSection = document.getElementById('benefits-section');
+const benefitTexts = gsap.utils.toArray('.benefit-text');
+const benefitBrushes = gsap.utils.toArray('.benefit-brush');
 
-// Убрали gsap.set. Если скрипт тупанет, всё просто останется видимым.
-// перед созданием advTl — верни явный gsap.set (в комментарии видно, что его убрали)
-gsap.set(advTexts, { autoAlpha: 0, y: 30 });
-const advTl = gsap.timeline({
+const benefitTl = gsap.timeline({
   scrollTrigger: {
-    trigger: advSection,
+    trigger: benefitSection,
     start: 'center center',
     end: '+=4000',
     scrub: 1,
@@ -117,16 +114,14 @@ const advTl = gsap.timeline({
 });
 
 // Собираем секвенцию: Текст -> Мазок -> Текст -> Мазок
-advTexts.forEach((text, i) => {
-  // Меняем opacity на autoAlpha для железобетонной отрисовки текста
-  advTl.fromTo(text, 
+benefitTexts.forEach((text, i) => {
+  benefitTl.fromTo(text, 
     { autoAlpha: 0, y: 30 }, 
     { autoAlpha: 1, y: 0, ease: 'none', duration: 1 }
   );
 
-  // Мазки остаются как были
-  if (advBrushes[i]) {
-    advTl.fromTo(advBrushes[i], 
+  if (benefitBrushes[i]) {
+    benefitTl.fromTo(benefitBrushes[i], 
       { clipPath: 'polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)' }, 
       { clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)', ease: 'none', duration: 1 }
     );
@@ -304,7 +299,6 @@ stepBtns.forEach(btn => {
 });
 
 // ========== ОБНОВЛЕНИЕ СКРОЛЛА ==========
-// Обязательно: пересчитываем позиции только ПОСЛЕ загрузки всех картинок и шрифтов
 window.addEventListener('load', () => {
   ScrollTrigger.refresh();
 });
