@@ -30,4 +30,4 @@
   animation: pulseOpacity 1.9s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-.adv-text { transition: none !important; }
+.benefit-text { transition: none !important; }
